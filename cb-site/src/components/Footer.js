@@ -25,6 +25,14 @@ export default (props) => {
 			>
 				@GuangWeiNgoh
 			</a>
+			<br />
+			<a
+				href="https://www.freepik.com/free-photos-vectors/banner"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				Art by macrovector
+			</a>
 		</footer>
 	);
 };
