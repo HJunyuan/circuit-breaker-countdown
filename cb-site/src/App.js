@@ -14,19 +14,13 @@ const styles = {
 	container: {
 		transform: "translate(0, 18vh)",
 	},
-	header: {
-		color: "white",
-		fontWeight: "bold",
-		fontSize: "28px",
-	},
 };
 
 function App() {
 	return (
 		<div style={styles.root}>
 			<Container style={styles.container}>
-				<h1 style={styles.header}>Hello Singapore,</h1>
-				<Greeting />
+				<Greeting daysElapsed={1} totalDays={28} />
 			</Container>
 		</div>
 	);

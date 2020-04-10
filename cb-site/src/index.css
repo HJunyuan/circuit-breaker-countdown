@@ -12,3 +12,7 @@ h5,
 h6 {
 	font-family: "Raleway", Georgia, "Times New Roman", Times, serif;
 }
+
+.progress-bar {
+	background-color: #ffdc85;
+}
