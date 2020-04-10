@@ -1,7 +1,8 @@
 import React from "react";
-import bg from "./img/BG_Skyline.svg";
-
 import { Container } from "react-bootstrap";
+
+import bg from "./img/BG_Skyline.svg";
+import SEO from "./components/SEO";
 import Clouds from "./components/Clouds";
 import Countdown from "./components/Countdown";
 import Footer from "./components/Footer";
@@ -26,6 +27,7 @@ const styles = {
 function App() {
 	return (
 		<div style={styles.root}>
+			<SEO />
 			<main style={styles.main}>
 				<Clouds />
 				<Container style={styles.container}>
