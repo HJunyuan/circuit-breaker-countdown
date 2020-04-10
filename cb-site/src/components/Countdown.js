@@ -1,5 +1,9 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
+
+const startDate = new Date(2020, 3, 7); // 3 = April
+const endDate = new Date(2020, 4, 4); // 4 = May
+const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
 
 const styles = {
 	root: {
@@ -20,23 +24,35 @@ const styles = {
 	progressBar: {
 		maxWidth: "480px",
 		height: "40px",
-		margin: "20px auto",
+		margin: "20px auto 0 auto",
 		borderRadius: "20px",
 	},
 	progressBarText: {
 		position: "absolute",
+		display: "flex",
+		alignItems: "center",
+		justifyContent: "center",
+		top: "0",
 		left: "0",
 		right: "0",
-		top: "2px",
 		bottom: "0",
 		color: "#5F5F5F",
-		fontSize: "24px",
+		fontSize: "20px",
 	},
 };
 
-export default (props) => {
-	const { daysElapsed = 0, totalDays = 0 } = props;
-	const daysLeft = totalDays - daysElapsed;
+export default () => {
+	const today = new Date();
+	const [daysElapsed, setDaysElapsed] = useState(0);
+	const [daysLeft, setDaysLeft] = useState(0);
+
+	useEffect(() => {
+		const intervalID = setInterval(() => {
+			console.log("hello");
+		}, 1000);
+
+		return () => clearInterval(intervalID);
+	}, []);
 
 	return (
 		<div style={styles.root}>
@@ -51,13 +67,15 @@ export default (props) => {
 					max={totalDays}
 					animated={true}
 				/>
-				<span style={styles.progressBarText}>
-					Just{" "}
-					<b>
-						{daysLeft} day{daysLeft > 1 && "s"}
-					</b>{" "}
-					left!
-				</span>
+				<div style={styles.progressBarText}>
+					<span>
+						Just{" "}
+						<b>
+							{daysLeft} day{daysLeft > 1 && "s"}
+						</b>{" "}
+						left!
+					</span>
+				</div>
 			</div>
 		</div>
 	);

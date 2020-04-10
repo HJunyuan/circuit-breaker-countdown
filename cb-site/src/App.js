@@ -27,7 +27,7 @@ function App() {
 		<div style={styles.root}>
 			<main style={styles.main}>
 				<Container style={styles.container}>
-					<Countdown daysElapsed={1} totalDays={28} />
+					<Countdown />
 				</Container>
 			</main>
 			<Footer />
