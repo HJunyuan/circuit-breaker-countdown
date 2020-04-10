@@ -42,14 +42,21 @@ const styles = {
 };
 
 export default () => {
-	const today = new Date();
-	const [daysElapsed, setDaysElapsed] = useState(0);
-	const [daysLeft, setDaysLeft] = useState(0);
+	const [daysElapsed, setDaysElapsed] = useState("");
+	const [daysLeft, setDaysLeft] = useState("");
 
 	useEffect(() => {
 		const intervalID = setInterval(() => {
-			console.log("hello");
-		}, 1000);
+			const today = new Date();
+			const timeElapsed = Math.abs(today - startDate);
+			const timeLeft = Math.abs(endDate - today);
+
+			const daysElapsed = Math.ceil(timeElapsed / (1000 * 60 * 60 * 24));
+			const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+
+			setDaysElapsed(daysElapsed);
+			setDaysLeft(daysLeft);
+		}, 500);
 
 		return () => clearInterval(intervalID);
 	}, []);
@@ -65,7 +72,6 @@ export default () => {
 					style={styles.progressBar}
 					now={daysElapsed}
 					max={totalDays}
-					animated={true}
 				/>
 				<div style={styles.progressBarText}>
 					<span>
