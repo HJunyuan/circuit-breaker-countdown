@@ -49,10 +49,9 @@ export default () => {
 		const intervalID = setInterval(() => {
 			const today = new Date();
 			const timeElapsed = Math.abs(today - startDate);
-			const timeLeft = Math.abs(endDate - today);
 
 			const daysElapsed = Math.ceil(timeElapsed / (1000 * 60 * 60 * 24));
-			const daysLeft = Math.ceil(timeLeft / (1000 * 60 * 60 * 24));
+			const daysLeft = totalDays - daysElapsed;
 
 			setDaysElapsed(daysElapsed);
 			setDaysLeft(daysLeft);
