@@ -44,16 +44,16 @@ export default (props) => {
 						src={sun}
 						alt="sun"
 						draggable={false}
-						className="parallaxchild"
+						className="parallaxchild3"
 						style={styles.parallaximg}
 					/>
 				</div>
-				<div data-depth="0.2" style={styles.parallaxparent}>
+				<div data-depth="0" style={styles.parallaxparent}>
 					<img
 						src={skyline}
 						alt="sun"
 						draggable={false}
-						className="parallaxchild3"
+						className=""
 						style={styles.parallaximg}
 					/>
 				</div>
