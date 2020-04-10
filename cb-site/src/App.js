@@ -2,7 +2,7 @@ import React from "react";
 import bg from "./img/background.png";
 
 import { Container } from "react-bootstrap";
-import Greeting from "./components/Greeting";
+import Countdown from "./components/Countdown";
 import Footer from "./components/Footer";
 
 const styles = {
@@ -27,7 +27,7 @@ function App() {
 		<div style={styles.root}>
 			<main style={styles.main}>
 				<Container style={styles.container}>
-					<Greeting daysElapsed={1} totalDays={28} />
+					<Countdown daysElapsed={1} totalDays={28} />
 				</Container>
 			</main>
 			<Footer />
