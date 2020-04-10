@@ -18,7 +18,7 @@ const styles = {
 		flexGrow: "1",
 	},
 	container: {
-		marginTop: "20vh",
+		marginTop: "15vh",
 	},
 };
 
