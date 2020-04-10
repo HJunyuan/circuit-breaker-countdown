@@ -2,7 +2,6 @@ import React from "react";
 
 const styles = {
   root: {
-    marginBottom: "10vh",
     fontWeight: "bold",
     textAlign: "center",
   },

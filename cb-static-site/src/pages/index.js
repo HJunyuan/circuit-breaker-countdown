@@ -4,13 +4,15 @@ import SEO from "../components/seo";
 import Layout from "../components/layout";
 import Background from "../components/Background";
 import Countdown from "../components/Countdown";
+import Share from "../components/Share";
 
-const IndexPage = () => (
+const IndexPage = ({ location }) => (
   <>
-    <SEO />
+    <SEO pathname={location.pathname} />
     <Background />
     <Layout>
-      <Countdown style={{ marginTop: "18vh" }} />
+      <Countdown style={{ marginTop: "9vmax" }} />
+      <Share />
     </Layout>
   </>
 );

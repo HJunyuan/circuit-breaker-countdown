@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: `Countdown to the end of Circuit Breaker | Singapore`,
-    description: `#SGUnited`,
-    author: `@HJunyuan`,
+    title: `Circuit Breaker Countdown | Singapore`,
+    siteURL: `https://circuit-breaker-countdown.web.app`,
+    description: `#SGUnited #Stayhome`,
+    author: `@HJunyuan`
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -10,25 +11,25 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,
-        path: `${__dirname}/src/images`,
-      },
+        path: `${__dirname}/src/images`
+      }
     },
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Countdown to the end of Circuit Breaker | Singapore`,
+        name: `Circuit Breaker Countdown | Singapore`,
         short_name: `Circuit Breaker Countdown`,
         start_url: `/`,
         background_color: `#FFFFFF`,
         theme_color: `#FFDC85`,
         display: `minimal-ui`,
-        icon: `src/images/logo.png`, // This path is relative to the root of the site.
-      },
-    },
+        icon: `src/images/logo.png` // This path is relative to the root of the site.
+      }
+    }
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
-  ],
+  ]
 };

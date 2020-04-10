@@ -21,7 +21,7 @@ const styles = {
   root: {
     display: "flex",
     flexDirection: "column",
-    height: "100vh",
+    minHeight: "90vh",
   },
   main: {
     flexGrow: 1,
