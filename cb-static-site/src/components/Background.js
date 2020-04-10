@@ -1,13 +1,13 @@
-import React, { useEffect } from "react"
+import React, { useEffect } from "react";
 
-import Parallax from "parallax-js"
-import "./background.css"
+import Parallax from "parallax-js";
+import "./background.css";
 
-import sky from "../img/BG_Sky.svg"
-import skyline from "../img/BG_Skyline.svg"
-import cloud1 from "../img/BG_Cloud1.svg"
-import cloud2 from "../img/BG_Cloud2.svg"
-import sun from "../img/BG_Sun.svg"
+import sky from "../images/BG_Sky.svg";
+import skyline from "../images/BG_Skyline.svg";
+import cloud1 from "../images/BG_Cloud1.svg";
+import cloud2 from "../images/BG_Cloud2.svg";
+import sun from "../images/BG_Sun.svg";
 
 const styles = {
   parallax: {
@@ -27,14 +27,14 @@ const styles = {
     height: "100%",
     objectFit: "cover",
   },
-}
+};
 
 export default props => {
   useEffect(() => {
-    var scene = document.getElementById("scene")
+    var scene = document.getElementById("scene");
     // var parallaxInstance = new Parallax(scene);
-    new Parallax(scene)
-  }, [])
+    new Parallax(scene);
+  }, []);
 
   return (
     <>
@@ -44,16 +44,16 @@ export default props => {
             src={sun}
             alt="sun"
             draggable={false}
-            className="parallaxchild"
+            className="parallaxchild3"
             style={styles.parallaximg}
           />
         </div>
-        <div data-depth="0.2" style={styles.parallaxparent}>
+        <div data-depth="0" style={styles.parallaxparent}>
           <img
             src={skyline}
             alt="sun"
             draggable={false}
-            className="parallaxchild3"
+            className=""
             style={styles.parallaximg}
           />
         </div>
@@ -77,5 +77,5 @@ export default props => {
         </div>
       </div>
     </>
-  )
-}
+  );
+};
