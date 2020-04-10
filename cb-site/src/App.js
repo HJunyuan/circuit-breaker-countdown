@@ -3,6 +3,7 @@ import bg from "./img/background.png";
 
 import { Container } from "react-bootstrap";
 import Greeting from "./components/Greeting";
+import Footer from "./components/Footer";
 
 const styles = {
 	root: {
@@ -10,18 +11,26 @@ const styles = {
 		background: `url(${bg}) no-repeat center center fixed`,
 		backgroundSize: "cover",
 		textAlign: "center",
+		display: "flex",
+		flexDirection: "column",
+	},
+	main: {
+		flexGrow: "1",
 	},
 	container: {
-		transform: "translate(0, 18vh)",
+		marginTop: "20vh",
 	},
 };
 
 function App() {
 	return (
 		<div style={styles.root}>
-			<Container style={styles.container}>
-				<Greeting daysElapsed={1} totalDays={28} />
-			</Container>
+			<main style={styles.main}>
+				<Container style={styles.container}>
+					<Greeting daysElapsed={1} totalDays={28} />
+				</Container>
+			</main>
+			<Footer />
 		</div>
 	);
 }
