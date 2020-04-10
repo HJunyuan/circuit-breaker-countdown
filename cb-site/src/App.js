@@ -1,7 +1,9 @@
 import React from "react";
-import bg from "./img/BG_Skyline.svg";
-
 import { Container } from "react-bootstrap";
+import { Helmet } from "react-helmet";
+
+import og_bg from "./img/background.png";
+import bg from "./img/BG_Skyline.svg";
 import Clouds from "./components/Clouds";
 import Countdown from "./components/Countdown";
 import Footer from "./components/Footer";
@@ -26,6 +28,9 @@ const styles = {
 function App() {
 	return (
 		<div style={styles.root}>
+			<Helmet>
+				<meta property="og:image" content={og_bg} />
+			</Helmet>
 			<main style={styles.main}>
 				<Clouds />
 				<Container style={styles.container}>
