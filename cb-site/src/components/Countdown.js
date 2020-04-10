@@ -22,9 +22,11 @@ export default (props) => {
 
 	return (
 		<>
-			Day {daysElapsed} of {totalDays}
+			It is day {daysElapsed} of
 			<br />
-			Days left: {daysLeft}
+			the {totalDays}-day Circuit Breaker.
+			<br />
+			Just {daysLeft} days left!
 		</>
 	);
 };

@@ -9,6 +9,12 @@ const styles = {
 		height: "100vh",
 		background: `url(${bg}) no-repeat center center fixed`,
 		backgroundSize: "cover",
+		textAlign: "center",
+	},
+	greeting: {
+		color: "white",
+		fontWeight: "bold",
+		fontSize: "30px",
 	},
 };
 
@@ -16,6 +22,7 @@ function App() {
 	return (
 		<div style={styles.root}>
 			<Container>
+				<h1 style={styles.greeting}>Hello Singapore,</h1>
 				<Countdown />
 			</Container>
 		</div>
