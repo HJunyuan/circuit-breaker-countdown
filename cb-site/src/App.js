@@ -2,7 +2,7 @@ import React from "react";
 import bg from "./img/background.png";
 
 import { Container } from "react-bootstrap";
-import Countdown from "./components/Countdown";
+import Greeting from "./components/Greeting";
 
 const styles = {
 	root: {
@@ -11,19 +11,22 @@ const styles = {
 		backgroundSize: "cover",
 		textAlign: "center",
 	},
-	greeting: {
+	container: {
+		transform: "translate(0, 18vh)",
+	},
+	header: {
 		color: "white",
 		fontWeight: "bold",
-		fontSize: "30px",
+		fontSize: "28px",
 	},
 };
 
 function App() {
 	return (
 		<div style={styles.root}>
-			<Container>
-				<h1 style={styles.greeting}>Hello Singapore,</h1>
-				<Countdown />
+			<Container style={styles.container}>
+				<h1 style={styles.header}>Hello Singapore,</h1>
+				<Greeting />
 			</Container>
 		</div>
 	);
