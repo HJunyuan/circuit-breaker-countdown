@@ -114,7 +114,9 @@ SEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
-  title: PropTypes.string
+  title: PropTypes.string,
+  img: PropTypes.string,
+  pathname: PropTypes.string
 };
 
 export default SEO;
