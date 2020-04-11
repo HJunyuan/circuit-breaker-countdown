@@ -65,14 +65,16 @@ export default ({ style }) => {
         clearInterval(intervalID);
         return;
       }
-      const timeElapsed = Math.abs(today - startDate);
-
+      const timeElapsed = today - startDate;
       const daysElapsed = Math.ceil(timeElapsed / (1000 * 60 * 60 * 24));
-
       setDaysElapsed(daysElapsed);
-      setDaysLeft(totalDays - daysElapsed);
-      setHoursLeft(24 - today.getHours());
-      setMinutesLeft(60 - today.getMinutes());
+
+      const timeLeft = endDate - today;
+      setDaysLeft(Math.floor(timeLeft / (1000 * 60 * 60 * 24)));
+      setHoursLeft(
+        Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      );
+      setMinutesLeft(Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)));
     }, 1000);
 
     return () => clearInterval(intervalID);
