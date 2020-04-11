@@ -56,6 +56,14 @@ export default ({ style }) => {
   useEffect(() => {
     const intervalID = setInterval(() => {
       const today = new Date();
+      if (today > endDate) {
+        setDaysElapsed(totalDays);
+        setDaysLeft(0);
+        setHoursLeft(0);
+        setMinutesLeft(0);
+        clearInterval(intervalID);
+        return;
+      }
       const timeElapsed = Math.abs(today - startDate);
 
       const daysElapsed = Math.ceil(timeElapsed / (1000 * 60 * 60 * 24));
