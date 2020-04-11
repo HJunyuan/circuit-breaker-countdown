@@ -9,9 +9,16 @@ import React from "react";
 
 export const onRenderBody = ({ setPostBodyComponents }) => {
   setPostBodyComponents([
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>,
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"></script>,
     <script
+      key="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"
+      src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"
+    ></script>,
+    <script
+      key="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"
+      src="https://www.gstatic.com/firebasejs/7.14.0/firebase-analytics.js"
+    ></script>,
+    <script
+      key="firebase.initializeApp"
       dangerouslySetInnerHTML={{
         __html: `
             var firebaseConfig = {
