@@ -4,7 +4,8 @@ const styles = {
   root: {
     fontWeight: "bold",
     textAlign: "center",
-  },
+    paddingBottom: "20px"
+  }
 };
 
 export default props => {

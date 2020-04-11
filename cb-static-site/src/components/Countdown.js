@@ -44,24 +44,21 @@ const styles = {
     color: "#5F5F5F",
     fontVariantNumeric: "tabular-nums",
     fontSize: "20px",
-    fontFamily: "Arial"
+    fontFamily: "'Open Sans', 'Arial'"
   }
 };
 
 export default ({ style }) => {
   const [daysElapsed, setDaysElapsed] = useState("");
-  const [daysLeft, setDaysLeft] = useState("");
-  const [hoursLeft, setHoursLeft] = useState("");
-  const [minutesLeft, setMinutesLeft] = useState("");
+  const [timeLeftText, setTimeLeftText] = useState("");
+  const [smTimeLeftText, setSmTimeLeftText] = useState("");
 
   useEffect(() => {
     const intervalID = setInterval(() => {
       const today = new Date();
       if (today > endDate) {
         setDaysElapsed(totalDays);
-        setDaysLeft(0);
-        setHoursLeft(0);
-        setMinutesLeft(0);
+        setTimeLeftText("(:");
         clearInterval(intervalID);
         return;
       }
@@ -70,12 +67,31 @@ export default ({ style }) => {
       setDaysElapsed(daysElapsed);
 
       const timeLeft = endDate - today;
-      setDaysLeft(Math.floor(timeLeft / (1000 * 60 * 60 * 24)));
-      setHoursLeft(
-        Math.floor((timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60))
+      const daysLeft = Math.floor(timeLeft / (1000 * 60 * 60 * 24));
+      const hoursLeft = Math.floor(
+        (timeLeft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
-      setMinutesLeft(Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60)));
-    }, 1000);
+      const minsLeft = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
+      const secsLeft = Math.floor((timeLeft % (1000 * 60)) / 1000);
+      const msLeft = Math.floor(timeLeft % 1000);
+
+      const plu = num => (num > 1 ? "s" : "");
+      const pad = (n, width) => {
+        n = n + "";
+        return n.length >= width
+          ? n
+          : new Array(width - n.length + 1).join("0") + n;
+      };
+
+      let str = `${daysLeft} day${plu(daysLeft)} `;
+      str += `${hoursLeft} hour${plu(hoursLeft)} `;
+      str += `${minsLeft} min${plu(minsLeft)}`;
+      setTimeLeftText(str);
+
+      let smallStr = `${pad(secsLeft, 2)}s `;
+      smallStr += `${pad(msLeft, 3)}ms`;
+      setSmTimeLeftText(smallStr);
+    }, 25);
 
     return () => clearInterval(intervalID);
   }, []);
@@ -88,7 +104,7 @@ export default ({ style }) => {
   return (
     <div style={rootStyle}>
       <h1 style={styles.header}>Hello Singapore,</h1>
-      <p style={styles.body}>
+      <p id="greeting" style={styles.body}>
         It is <span style={styles.underline}>Day {daysElapsed}</span> of
         <br />
         the {totalDays}-day Circuit Breaker.
@@ -100,19 +116,8 @@ export default ({ style }) => {
           max={totalDays}
         />
         <div style={styles.progressBarText}>
-          <span>
-            Just{" "}
-            <b>
-              {daysLeft} day{daysLeft > 1 && "s"}
-            </b>{" "}
-            <b>
-              {hoursLeft} hour{hoursLeft > 1 && "s"}
-            </b>{" "}
-            <b>
-              {minutesLeft} min{minutesLeft > 1 && "s"}
-            </b>{" "}
-            left!
-          </span>
+          <b>{timeLeftText}</b>
+          <small className="ml-2">{smTimeLeftText}</small>
         </div>
       </div>
       <p className="mt-2">#SGUnited #Stayhome</p>

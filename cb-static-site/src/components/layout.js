@@ -14,6 +14,7 @@ import { Container } from "react-bootstrap";
 import Footer from "./Footer";
 import "typeface-raleway";
 import "typeface-quicksand";
+import "typeface-open-sans";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./layout.css";
 
@@ -21,11 +22,11 @@ const styles = {
   root: {
     display: "flex",
     flexDirection: "column",
-    minHeight: "90vh",
+    minHeight: "90vh"
   },
   main: {
-    flexGrow: 1,
-  },
+    flexGrow: 1
+  }
 };
 
 const Layout = ({ children, style }) => {
@@ -41,7 +42,7 @@ const Layout = ({ children, style }) => {
 
   const rootStyle = {
     ...styles.root,
-    ...style,
+    ...style
   };
 
   return (
@@ -55,7 +56,7 @@ const Layout = ({ children, style }) => {
 };
 
 Layout.propTypes = {
-  children: PropTypes.node.isRequired,
+  children: PropTypes.node.isRequired
 };
 
 export default Layout;
