@@ -42,8 +42,9 @@ const styles = {
     right: "0",
     bottom: "0",
     color: "#5F5F5F",
+    fontVariantNumeric: "tabular-nums",
     fontSize: "20px",
-    fontVariant: "tabular-nums"
+    fontFamily: "Arial"
   }
 };
 
