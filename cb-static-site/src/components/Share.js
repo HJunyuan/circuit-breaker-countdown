@@ -9,10 +9,10 @@ import {
   TelegramShareButton
 } from "react-share";
 import {
-  FaFacebook,
+  FaFacebookF,
   FaTwitter,
   FaWhatsapp,
-  FaTelegram,
+  FaTelegramPlane,
   FaLink
 } from "react-icons/fa";
 
@@ -52,7 +52,7 @@ export default props => {
     <>
       <div style={styles.root}>
         <FacebookShareButton url={url}>
-          <FaFacebook style={styles.svg} />
+          <FaFacebookF style={styles.svg} />
         </FacebookShareButton>
         <TwitterShareButton url={url}>
           <FaTwitter style={styles.svg} />
@@ -63,7 +63,7 @@ export default props => {
           {/* <WhatsappIcon size={size} round={round} style={styles.buttons} /> */}
         </WhatsappShareButton>
         <TelegramShareButton url={url}>
-          <FaTelegram style={styles.svg} />
+          <FaTelegramPlane style={styles.svg} />
           {/* <TelegramIcon size={size} round={round} style={styles.buttons} /> */}
         </TelegramShareButton>
         <CopyToClipboard text={url} onCopy={() => setShowToast(true)}>
