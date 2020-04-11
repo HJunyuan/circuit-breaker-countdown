@@ -42,13 +42,16 @@ const styles = {
     right: "0",
     bottom: "0",
     color: "#5F5F5F",
-    fontSize: "20px"
+    fontSize: "20px",
+    fontVariant: "tabular-nums"
   }
 };
 
 export default ({ style }) => {
   const [daysElapsed, setDaysElapsed] = useState("");
   const [daysLeft, setDaysLeft] = useState("");
+  const [hoursLeft, setHoursLeft] = useState("");
+  const [minutesLeft, setMinutesLeft] = useState("");
 
   useEffect(() => {
     const intervalID = setInterval(() => {
@@ -56,11 +59,12 @@ export default ({ style }) => {
       const timeElapsed = Math.abs(today - startDate);
 
       const daysElapsed = Math.ceil(timeElapsed / (1000 * 60 * 60 * 24));
-      const daysLeft = totalDays - daysElapsed;
 
       setDaysElapsed(daysElapsed);
-      setDaysLeft(daysLeft);
-    }, 500);
+      setDaysLeft(totalDays - daysElapsed);
+      setHoursLeft(24 - today.getHours());
+      setMinutesLeft(60 - today.getMinutes());
+    }, 1000);
 
     return () => clearInterval(intervalID);
   }, []);
@@ -89,6 +93,12 @@ export default ({ style }) => {
             Just{" "}
             <b>
               {daysLeft} day{daysLeft > 1 && "s"}
+            </b>{" "}
+            <b>
+              {hoursLeft} hour{hoursLeft > 1 && "s"}
+            </b>{" "}
+            <b>
+              {minutesLeft} min{minutesLeft > 1 && "s"}
             </b>{" "}
             left!
           </span>
