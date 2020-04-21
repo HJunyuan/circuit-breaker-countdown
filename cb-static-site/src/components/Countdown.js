@@ -12,12 +12,12 @@ const styles = {
   },
   header: {
     fontWeight: "bold",
-    fontSize: "28px"
+    fontSize: "23px"
   },
   body: {
     margin: "16px 0",
-    lineHeight: "45px",
-    fontSize: "40px"
+    lineHeight: "32px",
+    fontSize: "30px"
   },
   underline: {
     textDecoration: "underline",
@@ -43,7 +43,7 @@ const styles = {
     bottom: "0",
     color: "#5F5F5F",
     fontVariantNumeric: "tabular-nums",
-    fontSize: "19px",
+    fontSize: "18px",
     fontFamily: "'Open Sans', 'Arial'"
   }
 };
@@ -104,7 +104,7 @@ export default ({ style }) => {
   return (
     <div style={rootStyle}>
       <h1 style={styles.header}>Hello Singapore,</h1>
-      <p id="greeting" style={styles.body}>
+      <p style={styles.body}>
         It is <span style={styles.underline}>Day {daysElapsed}</span> of
         <br />
         the {totalDays}-day Circuit Breaker.
