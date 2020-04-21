@@ -122,8 +122,8 @@ export default ({ style }) => {
         </div>
       </div>
       <p className="mt-2 mx-auto" style={{ maxWidth: "400px" }}>
-        The Circuit Breaker just got extended to 1 June 2020, so let's do our
-        part and stay home!
+        The Circuit Breaker just got extended to 1 June 2020. Let's do our part
+        and stay home!
       </p>
       <p>#SGUnited #Stayhome</p>
     </div>

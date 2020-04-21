@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: `Circuit Breaker Countdown | Singapore`,
     siteURL: `https://circuit-breaker-countdown.web.app`,
-    description: `The Circuit Breaker just got extended to 1 June 2020, so let's do our part and stay home! #SGUnited #Stayhome`,
+    description: `The Circuit Breaker just got extended to 1 June 2020. Let's do our part and stay home! #SGUnited #Stayhome`,
     author: `@HJunyuan`
   },
   plugins: [
