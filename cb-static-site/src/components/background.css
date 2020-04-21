@@ -63,9 +63,10 @@
   /* animation-name: example;
 	animation-duration: 10s;
     animation-iteration-count: infinite; */
-  animation: movement2 12s linear infinite;
+  animation: movement3 12s linear infinite;
+  margin-top: 80px;
 }
-@keyframes movement2 {
+@keyframes movement3 {
   0% {
     -webkit-transform: rotate(0deg) translateX(5px) translateY(5px) rotate(0deg)
       scale(1);
