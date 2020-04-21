@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
 
 const startDate = new Date(2020, 3, 7); // 3 = April
-const endDate = new Date(2020, 4, 4); // 4 = May
+const endDate = new Date(2020, 5, 1); // 4 = May, 5 = June
 const totalDays = Math.ceil((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
 
 const styles = {
@@ -43,7 +43,7 @@ const styles = {
     bottom: "0",
     color: "#5F5F5F",
     fontVariantNumeric: "tabular-nums",
-    fontSize: "20px",
+    fontSize: "19px",
     fontFamily: "'Open Sans', 'Arial'"
   }
 };
@@ -118,9 +118,14 @@ export default ({ style }) => {
         <div style={styles.progressBarText}>
           <b>{timeLeftText}</b>
           <small className="ml-2">{smTimeLeftText}</small>
+          <span className="ml-2">left</span>
         </div>
       </div>
-      <p className="mt-2">#SGUnited #Stayhome</p>
+      <p className="mt-2 mx-auto" style={{ maxWidth: "400px" }}>
+        The Circuit Breaker just got extended to 1 June 2020, so let's do our
+        part and stay home!
+      </p>
+      <p>#SGUnited #Stayhome</p>
     </div>
   );
 };
