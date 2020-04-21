@@ -16,17 +16,17 @@ const styles = {
     position: "fixed",
     background: `url(${sky}) no-repeat center center fixed`,
     backgroundSize: "cover",
-    zIndex: "-1",
+    zIndex: "-1"
   },
   parallaxparent: {
     width: "100%",
-    height: "100%",
+    height: "100%"
   },
   parallaximg: {
     width: "110%",
     height: "100%",
-    objectFit: "cover",
-  },
+    objectFit: "cover"
+  }
 };
 
 export default props => {
@@ -51,10 +51,10 @@ export default props => {
         <div data-depth="0" style={styles.parallaxparent}>
           <img
             src={skyline}
-            alt="sun"
+            alt="skyline"
             draggable={false}
             className=""
-            style={styles.parallaximg}
+            style={{ ...styles.parallaximg, transform: "translate(0, 80px)" }}
           />
         </div>
         <div data-depth="0.3" style={styles.parallaxparent}>
