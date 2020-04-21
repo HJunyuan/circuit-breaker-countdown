@@ -11,7 +11,7 @@ const IndexPage = ({ location }) => (
     <SEO pathname={location.pathname} />
     <Background />
     <Layout>
-      <Countdown style={{ marginTop: "8vmax" }} />
+      <Countdown style={{ marginTop: "10vmax" }} />
       <Share />
     </Layout>
   </>
