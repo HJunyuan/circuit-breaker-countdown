@@ -27,7 +27,7 @@ export default props => {
     <>
       <Disclaimer
         show={showDis}
-        onHide={() => {
+        onExit={() => {
           setShowDis(false);
           localStorage.setItem("readDisclaimer", true);
         }}

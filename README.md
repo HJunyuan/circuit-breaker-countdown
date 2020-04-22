@@ -4,11 +4,11 @@ A countdown page for Singaporeans.
 
 ## Disclaimer
 
-This countdown page is a **light-hearted site** for Singaporeans to have something **positive to look forward to**.
+This countdown page is designed to be a **light-hearted site** for Singaporeans to have something **positive to look forward to**.
 
 In no way does it condone any acts of "beating the system" by immediately breaking social distancing measures once the circuit breaker ends. That is, we must continue to practice all social distancing measures listed out by the government at all times (even after this countdown has ended).
 
-For anyone else that is struggling during this tough period, please remain hopeful that the situation will improve. Please head over to [Gov.sg](https://www.gov.sg/article/covid-19-resources) to find all the available resources. Together, we can overcome this challenge as #SGUnited.
+For anyone that is struggling during this tough period, please remain hopeful that the situation will improve. Head over to [Gov.sg](https://www.gov.sg/article/covid-19-resources) to find all the available resources. Together, we can overcome this challenge as #SGUnited.
 
 If you have any further questions, feel free to contact this [email](mailto:kyle@hjunyuan.com).
 
