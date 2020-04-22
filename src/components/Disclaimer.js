@@ -38,7 +38,7 @@ export default props => {
           challenge as #SGUnited. If you have any further questions, feel free
           to contact this{" "}
           <a
-            href="mailto:info@techsolutions.sg"
+            href="mailto:kyle@hjunyuan.com"
             target="_blank"
             rel="noopener noreferrer"
           >
