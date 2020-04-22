@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { ProgressBar } from "react-bootstrap";
+import { ProgressBar } from "react-bootstrap"; 
 
 const startDate = new Date(2020, 3, 7); // 3 = April
 const endDate = new Date(2020, 5, 1, 23, 23, 23, 999); // 5 = June (1 June inclusive)
