@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "react-bootstrap";
 
 import Disclaimer from "./Disclaimer";
@@ -16,11 +16,22 @@ const styles = {
 };
 
 export default props => {
-  const [showDis, setShowDis] = useState(true);
+  const [showDis, setShowDis] = useState(undefined);
+
+  useEffect(() => {
+    const readDisclaimer = localStorage.getItem("readDisclaimer");
+    if (readDisclaimer !== "true") setShowDis(true);
+  }, []);
 
   return (
     <>
-      <Disclaimer show={showDis} onHide={() => setShowDis(false)} />
+      <Disclaimer
+        show={showDis}
+        onHide={() => {
+          setShowDis(false);
+          localStorage.setItem("readDisclaimer", true);
+        }}
+      />
       <footer style={styles.root}>
         <p>
           <Button size="sm" onClick={() => setShowDis(true)}>
