@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { ProgressBar } from "react-bootstrap";
 
 const startDate = new Date(2020, 3, 7); // 3 = April
-const endDate = new Date(2020, 5, 1, 23, 23, 23, 999); // 5 = June (1 June inclusive)
-const totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24)) + 1;
+const endDate = new Date(2020, 5, 2); // 5 = June (1 June inclusive)
+const totalDays = Math.floor((endDate - startDate) / (1000 * 60 * 60 * 24));
 
 const styles = {
   root: {
@@ -58,7 +58,8 @@ export default ({ style }) => {
       const today = new Date();
       if (today > endDate) {
         setDaysElapsed(totalDays);
-        setTimeLeftText("(:");
+        setTimeLeftText("Stay safe everyone!");
+        setSmTimeLeftText("");
         clearInterval(intervalID);
         return;
       }
@@ -118,7 +119,9 @@ export default ({ style }) => {
         <div style={styles.progressBarText}>
           <b>{timeLeftText}</b>
           <small className="ml-2">{smTimeLeftText}</small>
-          <span className="ml-2">left</span>
+          {timeLeftText !== "Stay safe everyone!" && (
+            <span className="ml-2">left</span>
+          )}
         </div>
       </div>
       <p className="mt-2 mx-auto" style={{ maxWidth: "400px" }}>
